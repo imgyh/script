@@ -4,8 +4,8 @@
 name: valine_wake_up
 
 on:
-  schedule:
-    - cron: "*/25 0-15,23 * * *"
+  # schedule:
+  #   - cron: "*/25 0-15,23 * * *"
   push:
     branches: [ master ]
 
@@ -27,8 +27,8 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests
+        pip install requests re
 
     - name: Wake_up
       run: |
-        python main.py
+        python baidu_submit/baidu_submit.py
