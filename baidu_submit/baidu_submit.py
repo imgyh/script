@@ -5,9 +5,9 @@ import requests
 import re
 
 
-baidu_submit_url = r'http://data.zz.baidu.com/urls?site=https://www.imgyh.com&token=bRAFATrCdbjNx0Xi'
+baidu_submit_url = os.environ["BAIDU_SUBMIT_API"] #r'http://data.zz.baidu.com/urls?site=https://www.imgyh.com&token=bRAFATrCdbjNx0Xi'
 
-baidusitemap_url = r"https://www.imgyh.com/baidusitemap.xml"
+baidusitemap_url = os.environ["BAIDU_SITEMAP_URL"] #r"https://www.imgyh.com/baidusitemap.xml"
 
 def get_urls():
     headers={

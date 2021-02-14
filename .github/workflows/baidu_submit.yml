@@ -1,11 +1,11 @@
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: baidu_submit
+name: Baidu_Submit
 
 on:
-  # schedule:
-  #   - cron: "*/25 0-15,23 * * *"
+  schedule:
+    - cron: "0 0 0,6,12,18 * * ? *"
   push:
     branches: [ master ]
 
@@ -29,6 +29,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
 
-    - name: Wake_up
+    - name: 'Read Secrets'
+      env:
+        BAIDU_SUBMIT_API: ${{ secrets.BAIDU_SUBMIT_API }}
+        BAIDU_SITEMAP_URL: ${{ secrets.BAIDU_SITEMAP_URL }}
+
+    - name: Baidu_Submit
       run: |
         python baidu_submit/baidu_submit.py
