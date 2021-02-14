@@ -3,7 +3,7 @@
 
 import requests
 import re
-
+import os
 
 baidu_submit_url = os.environ["BAIDU_SUBMIT_API"] #r'http://data.zz.baidu.com/urls?site=https://www.imgyh.com&token=bRAFATrCdbjNx0Xi'
 
