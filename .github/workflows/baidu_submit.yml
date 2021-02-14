@@ -29,11 +29,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
 
-    - name: 'Read Secrets'
+    - name: Baidu_Submit
       env:
         BAIDU_SUBMIT_API: ${{ secrets.BAIDU_SUBMIT_API }}
         BAIDU_SITEMAP_URL: ${{ secrets.BAIDU_SITEMAP_URL }}
-
-    - name: Baidu_Submit
       run: |
         python baidu_submit/baidu_submit.py
