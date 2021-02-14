@@ -4,8 +4,8 @@
 name: Baidu_Submit
 
 on:
-  schedule:
-    - cron: "0 0 0,6,12,18 * * *"
+  # schedule:
+  #   - cron: "0 0 0,6,12,18 * * *"
   push:
     branches: [ master ]
 
